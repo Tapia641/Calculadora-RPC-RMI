@@ -1,5 +1,3 @@
-Tarea 3.2
-
 **Compilacion**
 
 Para generar los archivos server y client
