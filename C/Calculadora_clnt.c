@@ -54,15 +54,15 @@ multiplicar_1(entrada *argp, CLIENT *clnt)
 	return (&clnt_res);
 }
 
-int *
+double *
 dividir_1(entrada *argp, CLIENT *clnt)
 {
-	static int clnt_res;
+	static double clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, dividir,
 		(xdrproc_t) xdr_entrada, (caddr_t) argp,
-		(xdrproc_t) xdr_int, (caddr_t) &clnt_res,
+		(xdrproc_t) xdr_double, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
 	}

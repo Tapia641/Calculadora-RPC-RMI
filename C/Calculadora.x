@@ -8,6 +8,6 @@ program Calculadora{
         int sumar(entrada) = 1;
         int restar(entrada) = 2;
         int multiplicar(entrada) = 3;
-        int dividir(entrada) = 4;
+        double dividir(entrada) = 4;
     } = 1;
-}=0x30000001;
+} = 0x30000001;

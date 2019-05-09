@@ -34,8 +34,8 @@ extern  int * restar_1_svc(entrada *, struct svc_req *);
 extern  int * multiplicar_1(entrada *, CLIENT *);
 extern  int * multiplicar_1_svc(entrada *, struct svc_req *);
 #define dividir 4
-extern  int * dividir_1(entrada *, CLIENT *);
-extern  int * dividir_1_svc(entrada *, struct svc_req *);
+extern  double * dividir_1(entrada *, CLIENT *);
+extern  double * dividir_1_svc(entrada *, struct svc_req *);
 extern int calculadora_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -49,8 +49,8 @@ extern  int * restar_1_svc();
 extern  int * multiplicar_1();
 extern  int * multiplicar_1_svc();
 #define dividir 4
-extern  int * dividir_1();
-extern  int * dividir_1_svc();
+extern  double * dividir_1();
+extern  double * dividir_1_svc();
 extern int calculadora_1_freeresult ();
 #endif /* K&R C */
 

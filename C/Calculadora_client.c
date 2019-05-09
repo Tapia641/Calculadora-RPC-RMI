@@ -17,7 +17,7 @@ calculadora_1(char *host)
 	entrada  restar_1_arg;
 	int  *result_3;
 	entrada  multiplicar_1_arg;
-	int  *result_4;
+	double  *result_4;
 	entrada  dividir_1_arg;
 
 #ifndef	DEBUG
@@ -28,22 +28,47 @@ calculadora_1(char *host)
 	}
 #endif	/* DEBUG */
 
+
+	/*OPERACIONES CON SUMA*/
+	sumar_1_arg.arg1 = 3;
+	sumar_1_arg.arg2 = 5;
 	result_1 = sumar_1(&sumar_1_arg, clnt);
 	if (result_1 == (int *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
+	printf("El resultado de la sumar %i + %i = %d\n", sumar_1_arg.arg1, sumar_1_arg.arg2, *result_1);
+
+
+	/*OPERACIONES CON RESTA*/
+	restar_1_arg.arg1 = 10;
+	restar_1_arg.arg2 = 5;
 	result_2 = restar_1(&restar_1_arg, clnt);
 	if (result_2 == (int *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
+	printf("El resultado de restar  %i - %i = %d\n", restar_1_arg.arg1, restar_1_arg.arg2, *result_2);
+
+	/*OPERACIONES CON LA MULTIPLICACION*/
+	multiplicar_1_arg.arg1 = 5;
+	multiplicar_1_arg.arg2 = 5;
 	result_3 = multiplicar_1(&multiplicar_1_arg, clnt);
 	if (result_3 == (int *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
+	printf("El resultado de  multiplicar %i * %i = %d\n", multiplicar_1_arg.arg1, multiplicar_1_arg.arg2, *result_3);
+
+
+	/*OPERACIONES CON LA DIVISION*/
+	dividir_1_arg.arg1 = 10;
+	dividir_1_arg.arg2 = 3;
 	result_4 = dividir_1(&dividir_1_arg, clnt);
-	if (result_4 == (int *) NULL) {
+	if (result_4 == (double *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
+	printf("El resultado de  dividir %i / %i = %f\n", dividir_1_arg.arg1, dividir_1_arg.arg2, *result_4);
+
+
+
 #ifndef	DEBUG
 	clnt_destroy (clnt);
 #endif	 /* DEBUG */
@@ -61,5 +86,6 @@ main (int argc, char *argv[])
 	}
 	host = argv[1];
 	calculadora_1 (host);
+
 exit (0);
 }

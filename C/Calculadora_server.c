@@ -14,6 +14,7 @@ sumar_1_svc(entrada *argp, struct svc_req *rqstp)
 	/*
 	 * insert server code here
 	 */
+	result = argp->arg1 + argp->arg2;
 
 	return &result;
 }
@@ -26,6 +27,7 @@ restar_1_svc(entrada *argp, struct svc_req *rqstp)
 	/*
 	 * insert server code here
 	 */
+	result = argp->arg1 - argp->arg2;
 
 	return &result;
 }
@@ -38,18 +40,20 @@ multiplicar_1_svc(entrada *argp, struct svc_req *rqstp)
 	/*
 	 * insert server code here
 	 */
+	result = argp->arg1 * argp->arg2;
 
 	return &result;
 }
 
-int *
+double *
 dividir_1_svc(entrada *argp, struct svc_req *rqstp)
 {
-	static int  result;
+	static double  result;
 
 	/*
 	 * insert server code here
 	 */
+	result = (double)argp->arg1 / (double)argp->arg2;
 
 	return &result;
 }
